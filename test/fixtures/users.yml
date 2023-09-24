@@ -1,0 +1,8 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+<% 1.upto(10) do |n| %>
+user<%= n %>:
+  email: <%= "email#{n}@test.com" %>
+  nickname: $LABEL
+  # token: <%= "token#{n}" %>
+<% end %>

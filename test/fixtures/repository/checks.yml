@@ -1,0 +1,72 @@
+# _fixture:
+#   model_class: Repository::Check
+
+javascript_good_check:
+  repository: repository3
+  aasm_state: finished
+  passed: true
+  number_of_violations: 0
+  commit_id: 594c26e
+  check_results: []
+
+javascript_bad_check:
+  repository: javascript_app
+  aasm_state: finished
+  passed: false
+  number_of_violations: 6
+  commit_id: 5702e5b
+  check_results:
+  - filePath: src/admin/app.example.js
+    messages:
+    - message: Unexpected console statement.
+      ruleId: no-console
+      line: 33
+      column: 5
+  - filePath: tests/app.test.js
+    messages:
+    - message: "Unexpected use of file extension \"js\" for \"./helpers/strapi.js\""
+      ruleId: import/extensions
+      line: 2
+      column: 48
+    - message: "'beforeAll' is not defined."
+      ruleId: no-undef
+      line: 4
+      column: 1
+    - message: "'afterAll' is not defined."
+      ruleId: no-undef
+      line: 8
+      column: 1
+    - message: "'it' is not defined."
+      ruleId: no-undef
+      line: 12
+      column: 1
+  - filePath: tests/helpers/strapi.js
+    messages:
+    - message: "Unable to resolve path to module '@strapi/strapi'."
+      ruleId: import/no-unresolved
+      line: 1
+      column: 24
+
+ruby_bad_check:
+  repository: ruby_app
+  aasm_state: finished
+  passed: false
+  number_of_violations: 3
+  commit_id: 5702e5b
+  check_results:
+  - filePath: app/controllers/application_controller.rb
+    messages:
+    - message: Missing frozen string literal comment.
+      ruleId: Style/FrozenStringLiteralComment
+      line: 1
+      column: 1
+  - filePath: app/controllers/errors_controller.rb
+    messages:
+    - message: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      ruleId: Style/StringLiterals
+      line: 4
+      column: 10
+    - message: Use the new Ruby 1.9 hash syntax.
+      ruleId: Style/HashSyntax
+      line: 7
+      column: 12
