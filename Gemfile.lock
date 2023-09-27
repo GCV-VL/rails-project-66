@@ -250,7 +250,6 @@ GEM
     reline (0.3.2)
       io-console (~> 0.5)
     rexml (3.2.5)
-    rollbar (3.4.0)
     rubocop (1.48.1)
       json (~> 2.3)
       parallel (~> 1.10)
@@ -280,6 +279,11 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    sentry-rails (5.9.0)
+      railties (>= 5.0)
+      sentry-ruby (~> 5.9.0)
+    sentry-ruby (5.9.0)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
     simple_form (5.2.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
@@ -369,10 +373,11 @@ DEPENDENCIES
   puma (~> 5.0)
   pundit (~> 2.3)
   rails (~> 7.0.4, >= 7.0.4.2)
-  rollbar
   rubocop-performance
   rubocop-rails
   selenium-webdriver
+  sentry-rails
+  sentry-ruby
   simple_form
   simplecov
   slim-rails

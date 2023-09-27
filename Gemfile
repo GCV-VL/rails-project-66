@@ -85,7 +85,8 @@ group :production do
   gem 'pg'
 end
 
-gem 'rollbar'
+gem "sentry-ruby"
+gem "sentry-rails"
 gem 'rubocop-performance', require: false
 gem 'rubocop-rails', require: false
 gem 'simple_form'

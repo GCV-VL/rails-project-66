@@ -1,0 +1,362 @@
+
+db/migrate/20230411020226_add_full_name_to_repositories.rb,117
+class AddFullNameToRepositories < ActiveRecord::Migration[7.0]AddFullNameToRepositories3,0
+  def changechange4,0
+
+db/migrate/20230414094823_rename_column_check_date.rb,109
+class RenameColumnCheckDate < ActiveRecord::Migration[7.0]RenameColumnCheckDate3,0
+  def changechange4,0
+
+db/migrate/20230411030737_rename_column_was_the_check_passed.rb,125
+class RenameColumnWasTheCheckPassed < ActiveRecord::Migration[7.0]RenameColumnWasTheCheckPassed3,0
+  def changechange4,0
+
+db/migrate/20230411062607_change_column_null.rb,99
+class ChangeColumnNull < ActiveRecord::Migration[7.0]ChangeColumnNull3,0
+  def changechange4,0
+
+db/migrate/20230411015529_rename_column.rb,91
+class RenameColumn < ActiveRecord::Migration[7.0]RenameColumn3,0
+  def changechange4,0
+
+db/migrate/20230325094238_create_users.rb,89
+class CreateUsers < ActiveRecord::Migration[7.0]CreateUsers3,0
+  def changechange4,0
+
+db/migrate/20230414101734_change_columns_null.rb,101
+class ChangeColumnsNull < ActiveRecord::Migration[7.0]ChangeColumnsNull3,0
+  def changechange4,0
+
+db/migrate/20230414103637_remove_column_checked_at_from_repository_checks.rb,149
+class RemoveColumnCheckedAtFromRepositoryChecks < ActiveRecord::Migration[7.0]RemoveColumnCheckedAtFromRepositoryChecks3,0
+  def changechange4,0
+
+db/migrate/20230411021623_fill_full_name_column_in_repositories.rb,131
+class FillFullNameColumnInRepositories < ActiveRecord::Migration[7.0]FillFullNameColumnInRepositories3,0
+  def changechange4,0
+
+db/migrate/20230328052505_create_repositories.rb,103
+class CreateRepositories < ActiveRecord::Migration[7.0]CreateRepositories3,0
+  def changechange4,0
+
+db/migrate/20230401085839_create_repository_checks.rb,111
+class CreateRepositoryChecks < ActiveRecord::Migration[7.0]CreateRepositoryChecks3,0
+  def changechange4,0
+
+lib/stubs.rb,489
+COMMIT_ID = '5702e5b'COMMIT_ID3,0
+ESLINTER_JSON_PATH = 'test/fixtures/files/eslinter_good.json'ESLINTER_JSON_PATH4,0
+RUBOCOP_JSON_PATH = 'test/fixtures/files/rubocop.json'RUBOCOP_JSON_PATH5,0
+LINTERS_RESULT_MAP = { 'Javascript' => ESLINTER_JSON_PATH, 'Ruby' => RUBOCOP_JSON_PATH }.freezeLINTERS_RESULT_MAP6,0
+module StubsStubs8,0
+  def self.fetch_repo_data(_repository, _temp_repo_path)fetch_repo_data11,0
+  def self.lint_check(_temp_repo_path, language_class)lint_check15,0
+
+lib/stubs/octokit_client.rb,365
+GITHUB_REPOS_JSON_PATH = 'test/fixtures/files/github_repos.json'GITHUB_REPOS_JSON_PATH3,0
+module StubsStubs5,0
+  class OctokitClientOctokitClient6,0
+  class OctokitClientStubs::OctokitClient6,0
+    def initialize(*args); endinitialize7,0
+    def reposrepos9,0
+    def repo(github_id)repo14,0
+    def create_hook(*args, **kwargs); endcreate_hook27,0
+
+lib/application_container.rb,52
+class ApplicationContainerApplicationContainer3,0
+
+config/application.rb,174
+module RailsProject66RailsProject6611,0
+  class Application < Rails::ApplicationApplication12,0
+  class Application < Rails::ApplicationRailsProject66::Application12,0
+
+app/channels/application_cable/channel.rb,177
+module ApplicationCableApplicationCable3,0
+  class Channel < ActionCable::Channel::BaseChannel4,0
+  class Channel < ActionCable::Channel::BaseApplicationCable::Channel4,0
+
+app/channels/application_cable/connection.rb,195
+module ApplicationCableApplicationCable3,0
+  class Connection < ActionCable::Connection::BaseConnection4,0
+  class Connection < ActionCable::Connection::BaseApplicationCable::Connection4,0
+
+app/jobs/check_repository_job.rb,610
+GITHUB_API_PATH = 'https://api.github.com'GITHUB_API_PATH3,0
+TEMP_GIT_CLONES_PATH = 'tmp/git_clones'TEMP_GIT_CLONES_PATH4,0
+class CheckRepositoryJob < ApplicationJobCheckRepositoryJob6,0
+  def perform(check)perform9,0
+  def perform_fetchperform_fetch37,0
+  def perform_checkperform_check44,0
+  def perform_parse(json_string)perform_parse52,0
+def fetch_repo_data(repository, temp_repo_path)fetch_repo_data61,0
+def lint_check(temp_repo_path, language_class)lint_check71,0
+def parse_check(temp_repo_path, language_class, json_string)parse_check75,0
+def run_programm(command)run_programm79,0
+
+app/jobs/repository_update_job.rb,112
+class RepositoryUpdateJob < ApplicationJobRepositoryUpdateJob3,0
+  def perform(repository, token)perform6,0
+
+app/jobs/application_job.rb,58
+class ApplicationJob < ActiveJob::BaseApplicationJob3,0
+
+app/jobs/linters_and_parsers/javascript.rb,242
+module LintersAndParsersLintersAndParsers3,0
+  class JavascriptJavascript4,0
+  class JavascriptLintersAndParsers::Javascript4,0
+    def self.linter(temp_repo_path)linter5,0
+    def self.parser(temp_repo_path, json_string)parser11,0
+
+app/jobs/linters_and_parsers/ruby.rb,218
+module LintersAndParsersLintersAndParsers3,0
+  class RubyRuby4,0
+  class RubyLintersAndParsers::Ruby4,0
+    def self.linter(temp_repo_path)linter5,0
+    def self.parser(temp_repo_path, json_string)parser11,0
+
+app/jobs/create_repository_webhook_job.rb,119
+class CreateRepositoryWebhookJob < ApplicationJobCreateRepositoryWebhookJob3,0
+  def perform(repository)perform6,0
+
+app/helpers/application_helper.rb,101
+module ApplicationHelperApplicationHelper3,0
+  def get_alert_class(flash_type)get_alert_class4,0
+
+app/helpers/home_helper.rb,33
+module HomeHelperHomeHelper3,0
+
+app/controllers/concerns/auth_concern.rb,383
+module AuthConcernAuthConcern3,0
+  def sign_in(user)sign_in4,0
+  def sign_outsign_out8,0
+  def signed_in?signed_in?13,0
+  def current_usercurrent_user17,0
+  class NotAuthenticatedError < StandardError; endNotAuthenticatedError21,0
+  class NotAuthenticatedError < StandardError; endAuthConcern::NotAuthenticatedError21,0
+  def authenticate_user!authenticate_user!23,0
+
+app/controllers/web/repositories_controller.rb,569
+SUPPORTED_LANGUAGES = Repository.language.valuesSUPPORTED_LANGUAGES3,0
+module WebWeb5,0
+  class RepositoriesController < Web::ApplicationControllerRepositoriesController6,0
+  class RepositoriesController < Web::ApplicationControllerWeb::RepositoriesController6,0
+    def indexindex9,0
+    def showshow14,0
+    def newnew19,0
+    def createcreate27,0
+    def user_repos_listuser_repos_list42,0
+    def filter_supported_repos(repos)filter_supported_repos48,0
+    def set_repositoryset_repository52,0
+    def repository_paramsrepository_params57,0
+
+app/controllers/web/application_controller.rb,188
+module WebWeb3,0
+  class ApplicationController < ::ApplicationControllerApplicationController4,0
+  class ApplicationController < ::ApplicationControllerWeb::ApplicationController4,0
+
+app/controllers/web/repositories/checks_controller.rb,401
+module WebWeb3,0
+  module RepositoriesRepositories4,0
+  module RepositoriesWeb::Repositories4,0
+    class ChecksController < Web::Repositories::ApplicationControllerChecksController5,0
+    class ChecksController < Web::Repositories::ApplicationControllerWeb::Repositories::ChecksController5,0
+      def showshow9,0
+      def createcreate14,0
+      def set_repositoryset_repository28,0
+
+app/controllers/web/repositories/application_controller.rb,295
+module WebWeb3,0
+  module RepositoriesRepositories4,0
+  module RepositoriesWeb::Repositories4,0
+    class ApplicationController < Web::ApplicationControllerApplicationController5,0
+    class ApplicationController < Web::ApplicationControllerWeb::Repositories::ApplicationController5,0
+
+app/controllers/web/home_controller.rb,195
+module WebWeb3,0
+  class HomeController < Web::ApplicationControllerHomeController4,0
+  class HomeController < Web::ApplicationControllerWeb::HomeController4,0
+    def index; endindex5,0
+
+app/controllers/web/auth_controller.rb,223
+module WebWeb3,0
+  class AuthController < Web::ApplicationControllerAuthController4,0
+  class AuthController < Web::ApplicationControllerWeb::AuthController4,0
+    def callbackcallback5,0
+    def logoutlogout16,0
+
+app/controllers/application_controller.rb,187
+class ApplicationController < ActionController::BaseApplicationController3,0
+  def user_not_authorizeduser_not_authorized14,0
+  def user_not_authenticateduser_not_authenticated18,0
+
+app/controllers/errors_controller.rb,188
+class ErrorsController < ApplicationControllerErrorsController3,0
+  def not_foundnot_found6,0
+  def unprocessable_entityunprocessable_entity10,0
+  def server_errorserver_error14,0
+
+app/controllers/api/hooks_controller.rb,346
+module ApiApi3,0
+  class HooksController < Api::ApplicationControllerHooksController4,0
+  class HooksController < Api::ApplicationControllerApi::HooksController4,0
+    def github_webhookgithub_webhook7,0
+    def accept_push(github_id)accept_push20,0
+    def accept_pingaccept_ping34,0
+    def repository_paramsrepository_params38,0
+
+app/controllers/api/application_controller.rb,188
+module ApiApi3,0
+  class ApplicationController < ::ApplicationControllerApplicationController4,0
+  class ApplicationController < ::ApplicationControllerApi::ApplicationController4,0
+
+app/models/user.rb,376
+class User < ApplicationRecordUser3,0
+  has_many :repositories, dependent: :destroy, inverse_of: :userrepositories4,0
+  has_many :repositories, dependent: :destroy, inverse_of: :userrepositories=4,0
+  has_many :repositories, dependent: :destroy, inverse_of: :userrepositorie_ids4,0
+  has_many :repositories, dependent: :destroy, inverse_of: :userrepositorie_ids=4,0
+
+app/models/application_record.rb,67
+class ApplicationRecord < ActiveRecord::BaseApplicationRecord3,0
+
+app/models/repository.rb,826
+class Repository < ApplicationRecordRepository3,0
+  belongs_to :user, class_name: 'User', inverse_of: :repositoriesuser4,0
+  belongs_to :user, class_name: 'User', inverse_of: :repositoriesuser=4,0
+  belongs_to :user, class_name: 'User', inverse_of: :repositoriesbuild_user4,0
+  belongs_to :user, class_name: 'User', inverse_of: :repositoriescreate_user4,0
+  belongs_to :user, class_name: 'User', inverse_of: :repositoriescreate_user!4,0
+  has_many :checks, class_name: 'Check', dependent: :destroychecks5,0
+  has_many :checks, class_name: 'Check', dependent: :destroychecks=5,0
+  has_many :checks, class_name: 'Check', dependent: :destroycheck_ids5,0
+  has_many :checks, class_name: 'Check', dependent: :destroycheck_ids=5,0
+  scope :by_owner, ->(owner_user) { where(user_id: owner_user.id) }by_owner7,0
+
+app/models/repository/check.rb,630
+class RepositoryRepository3,0
+  class Check < ApplicationRecordCheck4,0
+  class Check < ApplicationRecordRepository::Check4,0
+    belongs_to :repository, class_name: 'Repository', inverse_of: :checksrepository5,0
+    belongs_to :repository, class_name: 'Repository', inverse_of: :checksrepository=5,0
+    belongs_to :repository, class_name: 'Repository', inverse_of: :checksbuild_repository5,0
+    belongs_to :repository, class_name: 'Repository', inverse_of: :checkscreate_repository5,0
+    belongs_to :repository, class_name: 'Repository', inverse_of: :checkscreate_repository!5,0
+    def pending?pending?55,0
+
+app/mailers/user_mailer.rb,250
+class UserMailer < ApplicationMailerUserMailer3,0
+  def repo_check_failedrepo_check_failed6,0
+  def repo_check_verification_failedrepo_check_verification_failed10,0
+  def repo_check_or_verification_failedrepo_check_or_verification_failed16,0
+
+app/mailers/application_mailer.rb,67
+class ApplicationMailer < ActionMailer::BaseApplicationMailer3,0
+
+app/policies/repository/check_policy.rb,235
+class RepositoryRepository3,0
+  class CheckPolicy < ApplicationPolicyCheckPolicy4,0
+  class CheckPolicy < ApplicationPolicyRepository::CheckPolicy4,0
+    def show?show?5,0
+    def create?create?9,0
+    def owner?owner?13,0
+
+app/policies/repository_policy.rb,158
+class RepositoryPolicy < ApplicationPolicyRepositoryPolicy3,0
+  def index?index?4,0
+  def show?show?8,0
+  def create?create?12,0
+  def new?new?16,0
+
+app/policies/application_policy.rb,572
+class ApplicationPolicyApplicationPolicy3,0
+  attr_reader :user, :recorduser4,0
+  attr_reader :user, :recordrecord4,0
+  def initialize(user, record)initialize6,0
+  def index?index?11,0
+  def show?show?15,0
+  def create?create?19,0
+  def new?new?23,0
+  def update?update?27,0
+  def edit?edit?31,0
+  def destroy?destroy?35,0
+  class ScopeScope39,0
+  class ScopeApplicationPolicy::Scope39,0
+    def initialize(user, scope)initialize40,0
+    def resolveresolve45,0
+    attr_reader :user, :scopeuser51,0
+    attr_reader :user, :scopescope51,0
+
+test/channels/application_cable/connection_test.rb,219
+module ApplicationCableApplicationCable5,0
+  class ConnectionTest < ActionCable::Connection::TestCaseConnectionTest6,0
+  class ConnectionTest < ActionCable::Connection::TestCaseApplicationCable::ConnectionTest6,0
+
+test/jobs/create_repository_webhook_job_test.rb,94
+class CreateRepositoryWebhookJobTest < ActiveJob::TestCaseCreateRepositoryWebhookJobTest5,0
+
+test/application_system_test_case.rb,143
+class ApplicationSystemTestCase < ActionDispatch::SystemTestCaseApplicationSystemTestCase5,0
+  def sign_in(user, _options = {})sign_in10,0
+
+test/system/user_system_test.rb,68
+class UserSystemTest < ApplicationSystemTestCaseUserSystemTest5,0
+
+test/controllers/web/repositories_controller_test.rb,224
+module WebWeb5,0
+  class RepositoriesControllerTest < ActionDispatch::IntegrationTestRepositoriesControllerTest6,0
+  class RepositoriesControllerTest < ActionDispatch::IntegrationTestWeb::RepositoriesControllerTest6,0
+
+test/controllers/web/auth_controller_test.rb,192
+module WebWeb3,0
+  class AuthControllerTest < ActionDispatch::IntegrationTestAuthControllerTest4,0
+  class AuthControllerTest < ActionDispatch::IntegrationTestWeb::AuthControllerTest4,0
+
+test/controllers/web/repositories/checks_controller_test.rb,301
+module WebWeb5,0
+  module RepositoriesRepositories6,0
+  module RepositoriesWeb::Repositories6,0
+    class ChecksControllerTest < ActionDispatch::IntegrationTestChecksControllerTest7,0
+    class ChecksControllerTest < ActionDispatch::IntegrationTestWeb::Repositories::ChecksControllerTest7,0
+
+test/controllers/web/home_controller_test.rb,192
+module WebWeb5,0
+  class HomeControllerTest < ActionDispatch::IntegrationTestHomeControllerTest6,0
+  class HomeControllerTest < ActionDispatch::IntegrationTestWeb::HomeControllerTest6,0
+
+test/controllers/api/hooks_controller_test.rb,196
+module ApiApi5,0
+  class HooksControllerTest < ActionDispatch::IntegrationTestHooksControllerTest6,0
+  class HooksControllerTest < ActionDispatch::IntegrationTestApi::HooksControllerTest6,0
+
+test/test_helper.rb,546
+module ActiveSupportActiveSupport11,0
+  class TestCaseTestCase12,0
+  class TestCaseActiveSupport::TestCase12,0
+def t(*args, **kwargs)t36,0
+def assert_flash(i18n_path, type = :notice)assert_flash40,0
+def mock_omni_auth(user, provider = :github)mock_omni_auth47,0
+module ActionDispatchActionDispatch62,0
+  class IntegrationTestIntegrationTest63,0
+  class IntegrationTestActionDispatch::IntegrationTest63,0
+    def sign_in(user, _options = {})sign_in64,0
+    def signed_in?signed_in?69,0
+    def current_usercurrent_user73,0
+
+test/models/repository_test.rb,66
+class RepositoryTest < ActiveSupport::TestCaseRepositoryTest5,0
+
+test/models/repository/check_test.rb,160
+class RepositoryRepository5,0
+  class CheckTest < ActiveSupport::TestCaseCheckTest6,0
+  class CheckTest < ActiveSupport::TestCaseRepository::CheckTest6,0
+
+test/models/user_test.rb,54
+class UserTest < ActiveSupport::TestCaseUserTest5,0
+
+test/mailers/previews/user_mailer_preview.rb,188
+class UserMailerPreview < ActionMailer::PreviewUserMailerPreview4,0
+  def repo_check_failedrepo_check_failed5,0
+  def repo_check_verification_failedrepo_check_verification_failed9,0
+
+test/mailers/user_mailer_test.rb,65
+class UserMailerTest < ActionMailer::TestCaseUserMailerTest5,0
