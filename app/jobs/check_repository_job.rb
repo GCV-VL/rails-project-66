@@ -27,7 +27,7 @@ class CheckRepositoryJob < ApplicationJob
     UserMailer.with(check:).repo_check_failed.deliver_later
 
     Rails.logger.debug e
-    Rollbar.error e
+    Sentry.capture_exception(e)
   ensure
     run_programm "rm -rf #{@temp_repo_path}"
   end

@@ -226,10 +226,6 @@
       "offenses": []
     },
     {
-      "path": "/home/buzz/rails-project-66/tmp/git_clones/ruby-app/config/initializers/rollbar.rb",
-      "offenses": []
-    },
-    {
       "path": "/home/buzz/rails-project-66/tmp/git_clones/ruby-app/config/initializers/simple_form.rb",
       "offenses": []
     },
