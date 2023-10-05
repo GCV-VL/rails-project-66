@@ -5,7 +5,7 @@ class CreateRepositoryChecks < ActiveRecord::Migration[7.0]
     create_table :repository_checks do |t|
       t.string :aasm_state
       t.datetime :check_date, precision: nil
-      t.boolean :was_the_check_passed, default: false
+      t.boolean :was_the_check_passed, null: false, default: false
       t.integer :number_of_violations
       t.string :commit_id
       t.json :check_results

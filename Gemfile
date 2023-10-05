@@ -85,10 +85,10 @@ group :production do
   gem 'pg'
 end
 
-gem "sentry-ruby"
-gem "sentry-rails"
 gem 'rubocop-performance', require: false
 gem 'rubocop-rails', require: false
+gem 'sentry-rails'
+gem 'sentry-ruby'
 gem 'simple_form'
 gem 'slim-rails'
 # gem 'omniauth'
@@ -102,7 +102,7 @@ gem 'pundit', '~> 2.3'
 gem 'dry-container', '~> 0.11.0'
 
 gem 'aasm', '~> 5.5'
-gem 'httparty'
-gem 'open3'
 gem 'aws-sdk-s3'
 gem 'faraday-retry'
+gem 'httparty'
+gem 'open3'
