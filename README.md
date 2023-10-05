@@ -1,4 +1,4 @@
-Проект "Анализатор качества репозиториев"
+## Проект "Анализатор качества репозиториев"
 
 Задеплоен на [render](https://analizator-kachestva-repozitoriev.onrender.com/)
 
