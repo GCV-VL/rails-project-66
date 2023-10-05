@@ -33,8 +33,8 @@ module ActiveSupport
   end
 end
 
-def t(*args, **kwargs)
-  I18n.t(*args, **kwargs)
+def t(*, **)
+  I18n.t(*, **)
 end
 
 def assert_flash(i18n_path, type = :notice)
