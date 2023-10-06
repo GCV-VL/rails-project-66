@@ -18,5 +18,3 @@ make lint
 ```
 make test
 ```
-
-
