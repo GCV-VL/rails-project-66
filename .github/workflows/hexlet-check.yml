@@ -6,7 +6,6 @@
 name: hexlet-check
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - '**'
