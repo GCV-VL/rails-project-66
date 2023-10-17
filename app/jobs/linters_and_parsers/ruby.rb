@@ -4,7 +4,7 @@ module LintersAndParsers
   class Ruby
     def self.linter(temp_repo_path)
       # run_programm "find #{temp_repo_path} -name '*eslint*.*' -type f -delete"
-      stdout, _exit_status = run_programm "bundle exec rubocop --format json #{temp_repo_path}"
+      stdout, _exit_status = run_programm "cd #{temp_repo_path} && bundle install && bundle exec rubocop --format json ."
       stdout # json_string
     end
 

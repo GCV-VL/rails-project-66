@@ -4,7 +4,7 @@ module LintersAndParsers
   class Javascript
     def self.linter(temp_repo_path)
       run_programm "find #{temp_repo_path} -name '*eslint*.*' -type f -delete"
-      stdout, _exit_status = run_programm "yarn run eslint --format json #{temp_repo_path}"
+      stdout, _exit_status = run_programm "cd #{temp_repo_path} && yarn install && yarn run eslint --format json ."
       stdout.split("\n")[2] # json_string
     end
 
